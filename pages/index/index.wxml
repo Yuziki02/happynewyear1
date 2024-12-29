@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="countdown" wx:if="{{!showWishes}}">
+    <text class="timer">{{countdownText}}</text>
+  </view>
+  
+  <view class="wishes {{showWishes ? 'show' : 'hidden'}}">
+    <text class="title glow">2025 新年快乐</text>
+    <text class="subtitle">愿你在龙年：</text>
+    <view class="wish-text">
+      <text class="rainbow-text" wx:for="{{wishes}}" wx:key="index" 
+            style="animation-delay: {{index * 500}}ms">
+        {{item}}
+      </text>
+    </view>
+    <text class="signature glow">2025 龙年大吉</text>
+  </view>
+
+  <view class="hearts-container">
+    <view class="heart" wx:for="{{hearts}}" wx:key="id"
+          style="left: {{item.x}}px; top: {{item.y}}px; animation-duration: {{item.duration}}s">
+      ❤
+    </view>
+  </view>
+
+  <view class="fireworks-container">
+    <view class="firework" wx:for="{{fireworks}}" wx:key="id"
+          style="left: {{item.x}}px; top: {{item.y}}px; background-color: {{item.color}}">
+    </view>
+  </view>
+</view> 

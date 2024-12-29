@@ -1,0 +1,124 @@
+.container {
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown {
+  text-align: center;
+}
+
+.timer {
+  font-size: 40rpx;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.wishes {
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.wishes.show {
+  opacity: 1;
+}
+
+.title {
+  font-size: 80rpx;
+  margin-bottom: 30rpx;
+}
+
+.subtitle {
+  font-size: 36rpx;
+  margin-bottom: 40rpx;
+}
+
+.wish-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.rainbow-text {
+  font-size: 44rpx;
+  font-family: 'STXingkai';
+  padding: 20rpx;
+  border-radius: 30rpx;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 10rpx 0;
+  animation: fadeInUp 0.5s forwards;
+  opacity: 0;
+}
+
+.signature {
+  margin-top: 60rpx;
+  font-size: 50rpx;
+  font-family: 'STKaiti';
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.heart {
+  position: fixed;
+  color: #ff4081;
+  font-size: 48rpx;
+  animation: float 4s ease-in-out;
+}
+
+.firework {
+  position: fixed;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  animation: explode 1s ease-out forwards;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(30);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.glow {
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #ff4da6;
+  }
+} 
